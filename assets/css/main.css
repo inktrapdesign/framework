@@ -1,0 +1,96 @@
+@charset 'utf-8';
+
+/* 
+[PROJECT NAME]
+Built by Inktrap
+http://www.inktrap.co.uk
+*/
+
+html,button,input{font-family: 'Open Sans','Helvetica','Arial',sans-serif; -webkit-font-smoothing: antialiased; -webkit-font-variant-ligatures: common-ligatures; -moz-font-variant-ligatures: common-ligatures; -o-font-variant-ligatures: common-ligatures; -ms-font-variant-ligatures: common-ligatures; font-variant-ligatures: common-ligatures;}
+body{color: #000; font-size: 0.9em; line-height: 1.4; background-color: #fff;}
+
+/* --- FONTS --- */
+
+/* @font-face code here */
+
+
+/* --- UTILITY --- */
+
+.invisible{position:absolute; left:-999em;} /* Can be seen by screen readers */
+.removed{display:none;}
+.relative{position:relative;}
+.clearfix{zoom:1; overflow: visible !important;}
+.clearfix:after{display:block; content:''; clear:both; height:0;}
+
+
+/* --- TYPOGRAPHY --- */
+
+::selection{} /* Selected text style */
+
+strong,
+b{font-weight: bold;}
+em,
+i{font-style: italic;}
+
+a{color: green; text-decoration: none; -webkit-transition: color 0.2s; -moz-transition: color 0.2s; -o-transition: color 0.2s; -ms-transition: color 0.2s; transition: color 0.2s;}
+a:hover{}
+
+.htype1,
+.htype2,
+.htype3 {font-weight: bold; margin: 0 0 0.5em; line-height: 1.8;}
+
+.htype1 {}
+.htype2 {}
+.htype3 {}
+
+.p,
+.wysiwyg p,
+.wysiwyg ul,
+.wysiwyg ol,
+.wysiwyg img {margin: 0 0 1.2em;}
+
+.wysiwyg ul,
+.wysiwyg ol {padding-left: 2em;}
+.wysiwyg ul li {list-style: disc outside;}
+.wysiwyg ol li {list-style: decimal outside;}
+
+
+/* --- NAVIGATION --- */
+
+#nav-primary {}
+#nav-primary li {display:inline-block;}
+#nav-primary li a {}
+
+
+/* --- CONTENT --- */
+
+#header{}
+#main-content{}
+#footer{}
+
+
+/* --- TABLET --- */
+
+@media only screen and (min-width:600px){
+
+body{font-size:0.95em;}
+
+}
+
+
+/* --- DESKTOP --- */
+
+@media handheld, only screen and (min-width:900px){
+
+body{font-size:1em;}
+
+}
+
+
+/* --- RETINA --- */
+
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+
+/* Retina images go here */
+
+}
