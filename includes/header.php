@@ -10,20 +10,26 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
+	<!-- Icons -->
 	<link rel="shortcut icon" href="assets/images/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="assets/images/apple-touch-icon-precomposed.png">
 
-	<link rel="stylesheet" href="assets/css/normalize.css">
+	<!--[if lt IE 9]>
+	<script src="assets/javascript/respond.min.js"></script>
+	<script src="assets/javascript/selectivizr-min.js"></script>
+	<![endif]-->
+
+	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/grid.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
-<div class="container" id="header" role="banner">
+<header class="container header" role="banner">
 	<div class="row">
-		<div class="w12">
-			<ul id="nav-primary" role="navigation">
+		<nav class="s4 m6 l12 pad">
+			<ul class="nav-primary" role="navigation">
 				<li class="selected"><a href="#">Home</a></li>
 				<li><a href="#">Lorem</a></li>
 				<li><a href="#">Ipsum</a></li>
@@ -31,6 +37,6 @@
 				<li><a href="#">Sit</a></li>
 				<li><a href="#">Amet</a></li>
 			</ul>
-		</div>
+		</nav>
 	</div>
-</div>
+</header>

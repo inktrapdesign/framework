@@ -1,16 +1,15 @@
 
-<div class="container" id="footer" role="contentinfo">
+<footer class="container" id="footer" role="contentinfo">
 	<div class="row">
-		<div class="w12">
+		<div class="s4">
 			<p>Hello footer!</p>
 		</div>
 	</div>
-</div>
+</footer>
 
 <!-- Javascript -->
-<script src="assets/javascript/respond.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/javascript/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/jquery-1.10.2.min.js"><\/script>')</script>
 <script src="assets/javascript/load.js"></script>
 
 <!-- Google Analytics -->

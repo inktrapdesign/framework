@@ -1,96 +1,133 @@
 @charset 'utf-8';
 
 /* 
-[PROJECT NAME]
+PROJECT_NAME
 Built by Inktrap
 http://www.inktrap.co.uk
 */
 
-html,button,input{font-family: 'Open Sans','Helvetica','Arial',sans-serif; -webkit-font-smoothing: antialiased; -webkit-font-variant-ligatures: common-ligatures; -moz-font-variant-ligatures: common-ligatures; -o-font-variant-ligatures: common-ligatures; -ms-font-variant-ligatures: common-ligatures; font-variant-ligatures: common-ligatures;}
-body{color: #000; font-size: 0.9em; line-height: 1.4; background-color: #fff;}
+html, button, input {font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif; -webkit-font-smoothing: antialiased; -webkit-font-variant-ligatures: common-ligatures; -moz-font-variant-ligatures: common-ligatures; -o-font-variant-ligatures: common-ligatures; -ms-font-variant-ligatures: common-ligatures; font-variant-ligatures: common-ligatures;}
+body {color: #000; font-size: 0.9em; line-height: 1.4; background-color: #fff;}
 
-/* --- FONTS --- */
+
+/* Fonts */
+/* --------------------------------------------------------------------------------------------- */
 
 /* @font-face code here */
 
 
-/* --- UTILITY --- */
+/* Helpers */
+/* --------------------------------------------------------------------------------------------- */
 
-.invisible{position:absolute; left:-999em;} /* Can be seen by screen readers */
-.removed{display:none;}
-.relative{position:relative;}
-.clearfix{zoom:1; overflow: visible !important;}
-.clearfix:after{display:block; content:''; clear:both; height:0;}
+.invisible {position: absolute; left: -999em;} /* Can be seen by screen readers */
+.removed {display: none;}
+.border-box {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.clearfix {zoom: 1; overflow: visible !important;}
+.clearfix:after {content: ''; display: block; clear: both; height: 0;}
 
 
-/* --- TYPOGRAPHY --- */
+/* Typography */
+/* --------------------------------------------------------------------------------------------- */
 
-::selection{} /* Selected text style */
+/* Selected text style */
+::selection {} /* Selected text style */
 
-strong,
-b{font-weight: bold;}
-em,
-i{font-style: italic;}
+/* Basics */
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
 
-a{color: green; text-decoration: none; -webkit-transition: color 0.2s; -moz-transition: color 0.2s; -o-transition: color 0.2s; -ms-transition: color 0.2s; transition: color 0.2s;}
-a:hover{}
+a {color: #666666; text-decoration: none; -webkit-transition: color 0.2s; -moz-transition: color 0.2s; -o-transition: color 0.2s; -ms-transition: color 0.2s; transition: color 0.2s;}
+a:hover {color: #000000;}
 
-.htype1,
-.htype2,
-.htype3 {font-weight: bold; margin: 0 0 0.5em; line-height: 1.8;}
+.page-title {font-size: 2.5em;}
 
-.htype1 {}
-.htype2 {}
-.htype3 {}
+.wysiwyg h2, .wysiwyg h3, .wysiwyg h4,
+.h1, .h2, .h3, .h4 {font-weight: bold; margin-bottom: 0.5em; line-height: 1.8;}
+.h1, .wysiwyg h1 {font-size: 1.8em;}
+.h2, .wysiwyg h2 {font-size: 1.6em;}
+.h3, .wysiwyg h3 {font-size: 1.4em;}
+.h4, .wysiwyg h4 {font-size: 1.2em;}
 
 .p,
 .wysiwyg p,
 .wysiwyg ul,
 .wysiwyg ol,
-.wysiwyg img {margin: 0 0 1.2em;}
+.wysiwyg img {margin-bottom: 1.2em;}
 
-.wysiwyg ul,
-.wysiwyg ol {padding-left: 2em;}
-.wysiwyg ul li {list-style: disc outside;}
-.wysiwyg ol li {list-style: decimal outside;}
-
-
-/* --- NAVIGATION --- */
-
-#nav-primary {}
-#nav-primary li {display:inline-block;}
-#nav-primary li a {}
+.wysiwyg ul, .ul,
+.wysiwyg ol, .ol {padding-left: 2em;}
+.wysiwyg ul li, .ul li {list-style: disc outside;}
+.wysiwyg ol li, .ol li {list-style: decimal outside;}
 
 
-/* --- CONTENT --- */
+/* Header and navigation */
+/* --------------------------------------------------------------------------------------------- */
 
-#header{}
-#main-content{}
-#footer{}
+.header {}
+
+.nav-primary {}
+.nav-primary li {display: block;}
+.nav-primary li a {display: block; width: 100%;}
 
 
-/* --- TABLET --- */
+/* Content */
+/* --------------------------------------------------------------------------------------------- */
 
-@media only screen and (min-width:600px){
+.main {}
 
-body{font-size:0.95em;}
+
+/* Footer */
+/* --------------------------------------------------------------------------------------------- */
+
+.footer {}
+
+
+/* Medium */
+/* --------------------------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 600px) {
+
+body {font-size: 0.95em;}
+
+/* Header and navigation */
+.nav-primary {}
+.nav-primary li {display: inline-block;}
+.nav-primary li a {display: block; width: auto;}
 
 }
 
 
-/* --- DESKTOP --- */
+/* Large */
+/* --------------------------------------------------------------------------------------------- */
 
-@media handheld, only screen and (min-width:900px){
+@media only screen and (min-width: 990px) {
 
-body{font-size:1em;}
+body {font-size: 1em;}
 
 }
 
 
-/* --- RETINA --- */
+/* Extra Large */
+/* --------------------------------------------------------------------------------------------- */
 
-@media only screen and (-webkit-min-device-pixel-ratio:2){
+@media only screen and (min-width: 1200px) {
 
-/* Retina images go here */
+body {font-size: 1em;}
+
+}
+
+
+/* Retina images */
+/* --------------------------------------------------------------------------------------------- */
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+.logo {background-image: url('../images/'); background-size: 200px 31px;} 
+
+}
+
+/* Retina and medium or higher */
+@media only screen and (-webkit-min-device-pixel-ratio: 2 and min-width: 767px) {
 
 }
