@@ -1,0 +1,210 @@
+/* 
+Mobile first grid system
+Built by Inktrap
+http://www.inktrap.co.uk
+*/
+
+/* Variables and mixins */
+/* --------------------------------------------------------------------------------------------- */
+
+$max-width: 			1500px;
+
+/* Small */
+$s-columns: 			4;
+$s-vertical-spacing: 	20px;
+$s-horizontal-spacing: 	20px;
+$s-container-spacing: 	0;
+
+/* Medium */
+$m-break-point: 		700px;
+$m-columns: 			6;
+$m-vertical-spacing: 	25px;
+$m-horizontal-spacing: 	25px;
+$m-container-spacing: 	15px;
+
+/* Large */
+$l-break-point: 		990px;
+$l-columns: 			12;
+$l-vertical-spacing: 	30px;
+$l-horizontal-spacing: 	30px;
+$l-container-spacing: 	55px;
+
+/* Extra Large */
+$xl-break-point: 		1200px;
+$xl-vertical-spacing: 	45px;
+$xl-horizontal-spacing: 50px;
+$xl-container-spacing: 	80px;
+
+/* Media queries */
+@mixin respond-to($media) {
+	@if $media == m {
+		@media only screen and (min-width: #{$m-break-point}) { @content; }
+	}
+	@else if $media == l {
+		@media only screen and (min-width: #{$l-break-point}) { @content; }
+	}
+	@else if $media == xl {
+		@media only screen and (min-width: #{$xl-break-point}) { @content; }
+	}
+}
+
+/* Responsive spacing */
+@mixin spacing($type, $side) {
+	@if $side == "vert" {
+		#{$type}-top: $s-horizontal-spacing;
+		#{$type}-bottom: $s-horizontal-spacing;
+		@include respond-to(m) {
+			#{$type}-top: $m-horizontal-spacing;
+			#{$type}-bottom: $m-horizontal-spacing;
+		}
+		@include respond-to(l) {
+			#{$type}-top: $l-horizontal-spacing;
+			#{$type}-bottom: $l-horizontal-spacing;
+		}
+		@include respond-to(xl) {
+			#{$type}-top: $xl-horizontal-spacing;
+			#{$type}-bottom: $xl-horizontal-spacing;
+		}
+	} @else if $side == "horz" {
+		#{$type}-left: $s-horizontal-spacing;
+		#{$type}-right: $s-horizontal-spacing;
+		@include respond-to(m) {
+			#{$type}-left: $m-horizontal-spacing;
+			#{$type}-right: $m-horizontal-spacing;
+		}
+		@include respond-to(l) {
+			#{$type}-left: $l-horizontal-spacing;
+			#{$type}-right: $l-horizontal-spacing;
+		}
+		@include respond-to(xl) {
+			#{$type}-left: $xl-horizontal-spacing;
+			#{$type}-right: $xl-horizontal-spacing;
+		}
+	} @else if $side == "" {
+		#{$type}: $s-horizontal-spacing;
+		@include respond-to(m) {#{$type}: $m-horizontal-spacing;}
+		@include respond-to(l) {#{$type}: $l-horizontal-spacing;}
+		@include respond-to(xl) {#{$type}: $xl-horizontal-spacing;}
+	} @else {
+		#{$type}-#{$side}: $s-horizontal-spacing;
+		@include respond-to(m) {#{$type}-#{$side}: $m-horizontal-spacing;}
+		@include respond-to(l) {#{$type}-#{$side}: $l-horizontal-spacing;}
+		@include respond-to(xl) {#{$type}-#{$side}: $xl-horizontal-spacing;}
+	}
+}
+
+
+/* Global */
+/* --------------------------------------------------------------------------------------------- */
+
+body {width: 100%; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; text-size-adjust: none;}
+.container {width: 100%; overflow: hidden;
+	@include box-sizing(border-box);
+}
+.row {width: auto; max-width: $max-width; overflow: hidden; margin: 0 auto;}
+
+/* Grid units */
+.g {float: left; min-height: 1px; overflow: hidden; display: block;}
+
+@for $i from 1 through $s-columns {
+	.s#{$i} {@extend .g;}
+}
+@for $i from 1 through $m-columns {
+	.m#{$i} {@extend .g;}
+}
+@for $i from 1 through $l-columns {
+	.l#{$i} {@extend .g;}
+}
+
+/* Padding */
+.pad, .pad-vert, .pad-horz {
+	@include box-sizing(border-box); 
+}
+
+/* Images */
+img {margin: 0 auto; height: auto; display: block;}
+img, object, video, audio {max-width: 100%;}
+
+/* Responsive video containers */
+.embed-container {position: relative; height: 0; overflow: hidden; padding-bottom: 56.25%;}
+.embed-container iframe, .embed-container object {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+
+
+/* Small */
+/* --------------------------------------------------------------------------------------------- */
+
+.container {padding-left: $s-container-spacing; padding-right: $s-container-spacing;}
+
+@for $i from 1 through $s-columns {
+	.s#{$i} {width: percentage($i / $s-columns);}
+}
+
+.pad {padding: $s-vertical-spacing $s-horizontal-spacing;}
+.pad-vert {padding: $s-vertical-spacing 0;}
+.pad-horz {padding: 0 $s-horizontal-spacing;}
+
+/* Helper classes */
+.s-visible {display: block;}
+.s-removed {display: none;}
+
+
+/* Medium */
+/* --------------------------------------------------------------------------------------------- */
+
+@include respond-to(m) {
+
+.container {padding-left: $m-container-spacing; padding-right: $m-container-spacing;}
+
+@for $i from 1 through $m-columns {
+	.m#{$i} {width: percentage($i / $m-columns);}
+}
+
+.pad {padding: $m-vertical-spacing $m-horizontal-spacing;}
+.pad-vert {padding: $m-vertical-spacing 0;}
+.pad-horz {padding: 0 $m-horizontal-spacing;}
+
+/* Helper classes */
+.s-removed, .m-visible {display: block;}
+.m-removed {display: none;}
+
+} /* End media query */
+
+
+/* Large */
+/* --------------------------------------------------------------------------------------------- */
+
+@include respond-to(l) {
+
+.container {padding-left: $l-container-spacing; padding-right: $l-container-spacing;}
+
+@for $i from 1 through $l-columns {
+	.l#{$i} {width: percentage($i / $l-columns);}
+}
+
+.pad {padding: $l-vertical-spacing $l-horizontal-spacing;}
+.pad-vert {padding: $l-vertical-spacing 0;}
+.pad-horz {padding: 0 $l-horizontal-spacing;}
+
+/* Helper classes */
+.s-removed, .m-removed, .l-visible {display: block;}
+.l-removed {display: none;}
+
+} /* End media query */
+
+
+/* Extra Large */
+/* --------------------------------------------------------------------------------------------- */
+
+@include respond-to(xl) {
+
+.container {padding-left: $xl-container-spacing; padding-right: $xl-container-spacing;}
+
+.pad {padding: $xl-vertical-spacing $xl-horizontal-spacing;}
+.pad-vert {padding: $xl-vertical-spacing 0;}
+.pad-horz {padding: 0 $xl-horizontal-spacing;}
+
+/* Helper classes */
+.s-removed, .m-removed, .l-removed, .xl-visible {display: block;}
+.xl-removed {display: none;}
+
+} /* End media query */

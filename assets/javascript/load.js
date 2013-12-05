@@ -1,3 +1,5 @@
 ( function(){
-	// Javascript here
+	$('.nav-toggle').click(function() {
+		$('body').toggleClass('nav-open');
+	})
 } )();

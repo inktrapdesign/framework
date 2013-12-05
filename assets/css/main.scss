@@ -1,0 +1,141 @@
+@charset 'utf-8';
+@import 'bourbon/_bourbon';
+@import '_reset';
+@import '_grid';
+
+/* 
+PROJECT_NAME
+Built by Inktrap
+http://www.inktrap.co.uk
+*/
+
+/* Variables */
+/* --------------------------------------------------------------------------------------------- */
+
+/* Colours */
+$background: #eeeeee;
+$headings: #111111;
+$text: #5a5a5a;
+$links: #19515a;
+
+/* Fonts */
+$source-sans: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+
+/* Basics */
+/* --------------------------------------------------------------------------------------------- */
+
+html, button, input, select {font-family: $source-sans; -webkit-font-smoothing: antialiased; -webkit-font-variant-ligatures: common-ligatures; -moz-font-variant-ligatures: common-ligatures; -o-font-variant-ligatures: common-ligatures; -ms-font-variant-ligatures: common-ligatures; font-variant-ligatures: common-ligatures;}
+body {color: $text; background-color: $background; font-size: 16px; line-height: 1.4;
+	@include respond-to(m) {font-size: 17px;}
+	@include respond-to(l) {font-size: 19px;}
+}
+
+/* Grid system */
+.main {}
+.row {}
+
+/* Helpers */
+.invisible {position: absolute; left: -999em;} /* Can be seen by screen readers */
+.removed {display: none;}
+.border-box {@include box-sizing(border-box);}
+
+
+/* Typography */
+/* --------------------------------------------------------------------------------------------- */
+
+/* Basics */
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+/* Links */
+a {color: $links; text-decoration: none; font-weight: bold;
+	@include transition(0.3s color);
+	.button {display: block; cursor: pointer; background-color: $links;}
+	&:hover {color: #000000;}
+}
+
+/* Headings and subheadings */
+.heading {font-weight: bold; color: $headings; margin-bottom: 0.5em; line-height: 1.4;}
+
+.page-title {@extend .heading; font-size: 2.2em; margin-bottom: 0;}
+
+.h1, .wysiwyg h2 {@extend .heading; font-size: 1.6em;}
+.h2, .wysiwyg h3 {@extend .heading; font-size: 1.4em;}
+.h3, .wysiwyg h4 {@extend .heading; font-size: 1.2em;}
+
+.info {font-size: 0.9em; margin-bottom: 0.6em;}
+.h1 + .info, .h2 + .info, .h3 + .info {margin-top: -0.6em;}
+
+/* Paragraphs */
+.p,
+.wysiwyg p,
+.wysiwyg ul,
+.wysiwyg ol,
+.wysiwyg img {margin-bottom: 1em;}
+.wysiwyg ul ul, .wysiwyg ol ol, .wysiwyg ul ol, .wysiwyg ol ul {margin-bottom: 0;}
+
+/* Lists */
+.wysiwyg ul, .ul,
+.wysiwyg ol, .ol {padding-left: 1.3em;}
+.wysiwyg ul li, .ul li {list-style: disc outside;}
+.wysiwyg ol li, .ol li {list-style: decimal outside;}
+
+/* Selected text style */
+::selection {}
+
+
+/* Header and navigation */
+/* --------------------------------------------------------------------------------------------- */
+
+.header {}
+
+/* Logo */
+.logo {display: block; text-indent: -9999px;}
+
+/* Primary navigation */
+.nav-primary {
+	li {display: block; float: left;
+		&.selected {}
+		a {display: block; width: 100%;
+			&:hover {}
+		}
+	}
+}
+
+/* Navigation toggle */
+.nav-toggle {
+	@include respond-to(m) {display: none;}
+	&:hover {}
+}
+
+/* Navigation open */
+.nav-open .nav-toggle:after {content: '\F077';}
+
+
+/* Content */
+/* --------------------------------------------------------------------------------------------- */
+
+// ?
+
+
+/* Content */
+/* --------------------------------------------------------------------------------------------- */
+
+.field {display: block;
+	label {}
+	input {}
+	button {@extend .button;}
+}
+
+
+/* Footer */
+/* --------------------------------------------------------------------------------------------- */
+
+.footer {background-color: $links;}
+
+
+/* IE fixes */
+/* --------------------------------------------------------------------------------------------- */
+
+.lt-ie9 {}

@@ -1,0 +1,28 @@
+/* 
+Framework demo page
+Built by Inktrap
+http://www.inktrap.co.uk
+*/
+
+$green: #19515a;
+
+body {}
+
+header {display: none;}
+
+.main {background-color: #fff;}
+
+.page-header {background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5fae92), color-stop(25%, #2f6f74), color-stop(90%, #143652)); background-image: -webkit-linear-gradient(-285deg, #5fae92 0%, #2f6f74 25%, #143652 90%); background-image: linear-gradient(15deg,#5fae92 0%, #2f6f74 25%, #143652 90%);
+	.page-title {color: #fff;}
+}
+
+.sidebar {background-color: #eeeeee;}
+
+footer {color: #fff;
+	background-image: -webkit-linear-gradient(top, #2b3034 0%, #2e3438 30%, #2e3438 100%);
+	background-image: linear-gradient(to bottom, #2b3034 0%, #2e3438 30%, #2e3438 100%);
+}
+
+.block {background-color: #fff; text-align: center;}
+
+.container.grid {padding-top: 3%; padding-bottom: 3%;}
